@@ -3,7 +3,7 @@ let publicUrl;
 submitButton.addEventListener('click', ()=>{
     let url = document.getElementById("inputBox").value;
     if(validateUrl(url)){
-        generateCode(url);
+        generateCode(publicUrl);
     }
 });
 function download(){
@@ -26,11 +26,14 @@ function share(){
 
 }
 function validateUrl(url){
+    url = url.toLowerCase();
     let regex = /^https?:\/\/([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\-\.\~\=\?\/]*)$/;
     let regexNoHttps =/^([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\-\.\~\=\?\/]*)$/;;
     if(regex.test(url)){
+        publicUrl = url;
         return true;
     }else if(regexNoHttps.test(url)){
+        publicUrl = "https://" + url;
         return true;
     }
     return false;
