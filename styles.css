@@ -5,6 +5,7 @@
     --input-background: #000000;
     --input-text: #364153;
     --qrcode-button-color: #F2F5F9;
+    --circle-color: #36415399;
 }
 *{
     padding: 0;
@@ -13,6 +14,10 @@
 }
 #body{
     background-color: var(--background-color);
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 #twoSquares{
     position: absolute;
@@ -27,7 +32,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
 }
 #logo{
@@ -78,4 +83,67 @@
 }
 button:hover{
     cursor: pointer;
+}
+#qrcodeStuffWrapper{
+  display:none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  
+}
+#qrcodeWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20vw;
+    width: 20vw;
+    background-color: white;
+    border-radius: 4vmin;
+    margin-top: 20vh;
+}
+#gap{
+    height: 15vh;
+    background-color: transparent;
+}
+#buttonWrapper, #largeCircle{
+    display: none;
+}
+#buttonWrapper{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40vw;
+}
+.bottomButton{
+    width: 15vw;
+    height: 10vh;
+    background-color: var(--border-color);
+    border-radius: 3vmin;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+}
+.bottomBottom:first-of-type(){
+    background-color: red;
+}
+#largeCircle{
+    width: 25vw;
+    height: 25vw;
+    background-color: var(--circle-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    border-radius: 50%;
+    z-index: -1;
+}
+#qrcode{
+    width: 15vw;
+    
+}
+#topNav{
+    margin: 2vh 0 0 2vh;
 }
